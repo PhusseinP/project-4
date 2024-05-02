@@ -58,13 +58,13 @@ public class Main {
     private static void addTask() {
         System.out.println("Enter task details:");
         scanner.nextLine(); // Consume newline
-        System.out.print("Name: ");
-        String name = scanner.nextLine();
+        System.out.print("Title: ");
+        String Title = scanner.nextLine();
         System.out.print("Description: ");
         String description = scanner.nextLine();
         System.out.print("Priority (0-5): ");
         int priority = scanner.nextInt();
-        tasks.add(new Task(name, description, priority));
+        tasks.add(new Task(Title, description, priority));
     }
 
     private static void deleteTask() {
@@ -97,7 +97,7 @@ public class Main {
             System.out.println("No tasks found.");
             return;
         }
-        System.out.println("Index | Task Name | Description | Priority");
+        System.out.println("Index | Task Title | Description | Priority");
         for (int i = 0; i < tasks.size(); i++) {
             Task task = tasks.get(i);
             System.out.printf("%d | %s | %s | %d\n", i, task.getName(), task.getDescription(), task.getPriority());
